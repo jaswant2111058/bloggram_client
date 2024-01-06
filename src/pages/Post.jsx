@@ -3,8 +3,8 @@ import { useContext } from "react";
 import api from "../api/post"
 import { useNavigate } from "react-router-dom";
 import DataContext from "../context/DataContext";
-import {FaEdit} from "react-icons/fa"
-import {AiFillDelete} from "react-icons/ai"
+import { FaEdit } from "react-icons/fa"
+import { AiFillDelete } from "react-icons/ai"
 import DOMpurify from 'dompurify'
 import './post.css'
 import { useAuth0 } from '@auth0/auth0-react'
@@ -44,7 +44,7 @@ const PostPage = () => {
               <p><strong>By {post?.user.name}</strong></p>
             </div>
             <div className="postContainer">
-              <p className="postDate">{post.datetime.split(' ').slice(0,3).join(' ')}</p>
+              <p className="postDate">{post.datetime.split(' ').slice(0, 3).join(' ')}</p>
               {
                 isAuthenticated && user?.sub?.split('|')[1] === post?.user?.sub &&
                 <>
@@ -62,28 +62,28 @@ const PostPage = () => {
                 </>}
               <div className="postBody sun-editor-editable" dangerouslySetInnerHTML={{ __html: DOMpurify.sanitize(post.body, { ADD_TAGS: ['iframe'] }) }} />
               <div className="author">
-              <div>
-                <img src={post?.user?.photo} />
-                <span style={{padding:"10px"}}>
-                  <p><strong>By {post?.user?.name}</strong></p>
-                  <p><em>{"student"}</em></p>
-                </span>
-              </div>
-                {
-                isAuthenticated && user?.sub?.split('|')[1] === post?.user?.sub &&
                 <div>
-                  <Link to={`/edit/${post._id}`}>
-                    <button className="editButton">
-                      <FaEdit style={{ color: "black" }} size="1.7rem" />
-                    </button>
-                  </Link>
-                  <button
-                    onClick={() => handleDelete(post._id)}
-                    className="deleteButton"
-                  >
-                    <AiFillDelete style={{ color: "black" }} size="1.7rem" />
-                  </button>
+                  <img src={post?.user?.photo} />
+                  <span style={{ padding: "10px" }}>
+                    <p><strong>By {post?.user?.name}</strong></p>
+                    <p><em>{"student"}</em></p>
+                  </span>
                 </div>
+                {
+                  isAuthenticated && user?.sub?.split('|')[1] === post?.user?.sub &&
+                  <div>
+                    <Link to={`/edit/${post._id}`}>
+                      <button className="editButton">
+                        <FaEdit style={{ color: "black" }} size="1.7rem" />
+                      </button>
+                    </Link>
+                    <button
+                      onClick={() => handleDelete(post._id)}
+                      className="deleteButton"
+                    >
+                      <AiFillDelete style={{ color: "black" }} size="1.7rem" />
+                    </button>
+                  </div>
                 }
               </div>
             </div>
