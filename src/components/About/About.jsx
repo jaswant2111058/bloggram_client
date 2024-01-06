@@ -5,7 +5,7 @@ const About = () => {
     <main className="About">
       <h2>About</h2>
       <p style={{ marginTop: "1rem" }}>
-        Insight gives you a better way to express your exprience, knowledge or anything in your mind
+        BlogGrame gives you a better way to express your exprience, knowledge or anything in your mind
       </p>
       <Logo/>
     </main>

@@ -15,9 +15,9 @@ const Header = ({searchbarref}) => {
     }
 
     return <header className="Header">
-        {width <= height && <span className='logoText'><span><h3>Insight</h3></span></span>}
+        {width <= height && <span className='logoText'><span><h3>BlogGram</h3></span></span>}
         <nav className="Nav" ref={navRef} onClick={showNavbar}>
-            {width > height && <span className='logoText'><span><h1>Insight</h1></span></span>}
+            {width > height && <span className='logoText'><span><h1>BlogGram</h1></span></span>}
             <ul>
                 <li>
                     <Link to="/">Home</Link>

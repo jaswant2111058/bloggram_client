@@ -8,7 +8,7 @@ const Footer = () => {
         <h1>
             &copy; {today.getFullYear() }
         </h1>
-        <span style={{fontSize:"1rem"}} className='logoText'>&nbsp; Insight</span>
+        <span style={{fontSize:"1rem"}} className='logoText'>&nbsp; BlogGrame</span>
     </footer>
 }
 
