@@ -17,7 +17,7 @@ root.render(
         scope: "openid profile email"
       }}
     >
-      <Router>
+    <Router>
         <Routes>
           <Route path="/*" element={<App />} />
         </Routes>
