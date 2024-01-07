@@ -1,9 +1,5 @@
 import React, { useState } from 'react'
-import { FaInstagram } from "react-icons/fa";
-// import { FaXTwitter } from "react-icons/fa6";
-import { FaSquareInstagram } from "react-icons/fa6";
-import { FaSquareXTwitter } from "react-icons/fa6";
-import { FaLinkedin } from "react-icons/fa";
+import { AiFillGithub,AiFillLinkedin,AiFillInstagram,AiFillMail } from 'react-icons/ai'
 import './ContactUs.css'
 import { Link } from 'react-router-dom';
 import api from '../api/post'
@@ -35,9 +31,9 @@ const ContactUs = () => {
                     <h1 className='contactUsHead'>Contact Us</h1>
                     <div className='conatctUsform'>
                         <form onSubmit={handleSubmit}>
-                            <input name="name" placeholder='Full Name' required type='text' value={response.name} onChange={handleChange}/>
-                            <input name="email" placeholder='E-mail' required type='email' value={response.email} onChange={handleChange}/>
-                            <input name="message" placeholder='Message' required type='text' value={response.message} onChange={handleChange}/>
+                            <input name="name" placeholder='Full Name' required type='text' value={response.name} onChange={handleChange} />
+                            <input name="email" placeholder='E-mail' required type='email' value={response.email} onChange={handleChange} />
+                            <input name="message" placeholder='Message' required type='text' value={response.message} onChange={handleChange} />
                             <button type="submit">Contact Us</button>
                         </form>
                         <div>
@@ -49,9 +45,10 @@ const ContactUs = () => {
                             <p>India</p>
                             <br /><br />
                             <div className='socialLinksContainer'>
-                                <Link className='socialLinks' to="https://www.instagram.com/__nikhil___sinha__"><FaSquareInstagram /></Link>
-                                <Link className='socialLinks' to="https://twitter.com/sin88394"><FaSquareXTwitter /></Link>
-                                <Link className='socialLinks' to="https://www.linkedin.com/in/nikhilsinha822/"><FaLinkedin /></Link>
+                                <a className='socialLinks' href='https://github.com/jaswant2111058'><AiFillGithub /></a>
+                                <a className='socialLinks' href='https://www.linkedin.com/in/jaswant-kushwaha-037281252/'><AiFillLinkedin /></a>
+                                <a className='socialLinks' href='https://www.instagram.com/jassi_maurya/'><AiFillInstagram /></a>
+                                <a className='socialLinks' href='mailto:jaswant21110583@akgec.ac.in'><AiFillMail /></a>
                             </div>
                         </div>
                     </div>
