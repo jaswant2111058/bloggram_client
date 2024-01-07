@@ -10,7 +10,7 @@ export const DataProvider = ({children}) => {
   const [posts, setPosts] = useState([]);
   const { width } = useWindowSize();
   const { data, fetchError, isLoading } = useAxiosFetch(
-    `${import.meta.env.VITE_BASE_URL}/posts`
+    `https://bloggramserver.onrender.com/posts`
   );
 
   useEffect(() => {
@@ -30,11 +30,11 @@ export const DataProvider = ({children}) => {
   const generateImageUrl = async (img) => {
     const data = new FormData();
     data.append("file", img);
-    data.append("upload_preset", (import.meta.env.VITE_PRESET_NAME));
-    data.append("cloud_name", (import.meta.env.VITE_CLOUD_NAME));
+    data.append("upload_preset", ("BlogImages"));
+    data.append("cloud_name", ("dusjaet8n"));
     data.append("folder", "BlogImages");
     try {
-      const res = await axios.post(`https://api.cloudinary.com/v1_1/${import.meta.env.VITE_CLOUD_NAME}/image/upload`
+      const res = await axios.post(`https://api.cloudinary.com/v1_1/dusjaet8n/image/upload`
       , data);
       let image = await res.data.url;
       let imgId = await res.data.public_id;
